@@ -1,0 +1,65 @@
+﻿@using Sitecore.Resources.Media
+@using Sitecore.Mvc
+@using Sitecore.Data.Fields
+@using Sitecore.Data.Items
+@model Footer.Models.Footermodel
+
+<link rel="stylesheet" href="~/css/Footer.css">
+
+<footer>
+    @if (Model != null && Model.Item != null)
+    {
+        <div class="container">
+            <!-- About Us Section -->
+            <div class="column about-us">
+                <h4>About Us</h4>
+                <p>@Html.Sitecore().Field("About us", Model.Item)</p>
+                <p>@Html.Sitecore().Field("Intro", Model.Item)</p>
+            </div>
+
+            <!-- Pages Section -->
+            <div class="column pages">
+                <h4>@Html.Sitecore().Field("PagesTitle", Model.Item)</h4>
+                <ul>
+                    @{
+                        MultilistField pagesField = Model.Item.Fields["Pagelink"];
+                        if (pagesField != null)
+                        {
+                            foreach (var page in pagesField.GetItems())
+                            {
+                                <li><a href="@page.Paths.FullPath">@Html.Sitecore().Field("Title", page)</a></li>
+                            }
+                        }
+                    }
+                </ul>
+            </div>
+
+            <!-- Our Services Section -->
+            <div class="column services">
+                <h4>@Html.Sitecore().Field("OurServicesTitle", Model.Item)</h4>
+                <ul>
+                    @{
+                        MultilistField servicesField = Model.Item.Fields["OurServiceslinks"];
+                        if (servicesField != null)
+                        {
+                            foreach (var service in servicesField.GetItems())
+                            {
+                                <li>@Html.Sitecore().Field("Title", service)</li>
+                            }
+                        }
+                    }
+                </ul>
+            </div>
+
+            <!-- Availability Section -->
+            <div class="column availability">
+                <h4>Our Availability</h4>
+                <span>@Html.Sitecore().Field("Ouravailabilty", Model.Item)</span>
+                <div class="emergency">
+                    <img src="~/images/emergency-icon.png" alt="Emergency Icon" />
+                    <a href="tel:00011122233">000 111 222 33</a>
+                </div>
+            </div>
+        </div>
+    }
+</footer>

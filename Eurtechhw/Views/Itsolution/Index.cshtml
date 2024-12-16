@@ -1,0 +1,38 @@
+﻿@model Itsolution.Models.TestModel
+@using Sitecore.Resources.Media
+@using Sitecore.Mvc
+@using Sitecore.Data.Fields
+@using Sitecore.Data.Items
+
+<link rel="stylesheet" href="~/css/itsolution.css" />
+
+
+
+
+
+@if (Model != null && Model.Item != null)
+{
+    <div class="hero-section">
+        <div class="hero-background">
+            @Html.Sitecore().Field("BackgrndImage", Model.Item)
+        </div>
+        <div class="hero-content">
+            <div class="subtext">
+                @Html.Sitecore().Field("Title", Model.Item)
+            </div>
+            <div class="heading">
+                @Html.Sitecore().Field("Itsolution", Model.Item)
+            </div>
+            <div class="subheading">
+                @Html.Sitecore().Field("Intro", Model.Item)
+            </div>
+            <div class="buttons">
+                <div class="button1">
+                    @Html.Sitecore().Field("Getstarted", Model.Item)
+                </div>
+               
+                <bold>@Html.Sitecore().Field("Video", Model.Item)</bold>
+            </div>
+        </div>
+    </div>
+}

@@ -1,0 +1,75 @@
+﻿body {
+    /*background-color: #1b1b2f;*/ /* Dark background */
+    color: black; /* White text */
+    font-family: 'Arial', sans-serif; /* Clean font style */
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+    color: black; /* White for the header */
+}
+
+.main-container {
+    background-color: #1b1b2f;
+}
+
+#main-container-h1 {
+    color: white;
+}
+
+.services-container {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    /*justify-content: center;
+        flex-wrap: wrap;*/ /* For responsiveness */
+    gap: 2rem;
+    padding: 1rem;
+    background-color: #1b1b2f;
+}
+
+.service-card {
+    background-color: #252540; /* Dark card background */
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 0.5rem;
+    width: 250px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+    .service-card:hover {
+        transform: translateY(-10px); /* Slight lift on hover */
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+    }
+
+    .service-card img {
+        width: 80px;
+        height: 80px;
+        margin-bottom: 1rem;
+    }
+
+.service-title {
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: #ffffff;
+}
+
+.service-description {
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    color: #d3d3d3; /* Slightly lighter text for description */
+}
+
+.service-footer {
+    text-decoration: none;
+    color: #62dafb; /* Bright link color */
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+    .service-footer:hover {
+        text-decoration: underline;
+    }

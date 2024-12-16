@@ -1,0 +1,65 @@
+# User-specific files
+.vs/
+.vscode/
+.idea/
+*.user
+*.userosscache
+*.suo
+*.userprefs
+
+# Windows Installer files
+*.cab
+*.msi
+*.msm
+*.msp
+
+# Windows Installer package files
+*.vsix
+
+# Build Folders
+[Dd]ebug/
+[Dd]ebugPublic/
+[Dd]ist/
+[Dd]eployment/
+[Dd]ebug-*/ 
+[Dd]ist-*/ 
+
+# User-specific build files
+.vscode/
+
+# .NET Core build directories
+bin/
+obj/
+
+# ASP.NET Scaffolding
+ScaffoldingReadMe.txt
+
+# Windows Installer files
+*.cab
+*.msi
+*.msm
+*.msp
+
+# NPM packages
+node_modules/
+
+# ASP.NET Core
+wwwroot/
+
+# Resharper files
+.idea/
+
+# VS for Mac
+.vscode/
+
+# Windows Installer files
+*.cab
+*.msi
+*.msm
+*.msp
+
+# JetBrains Rider
+.idea/
+
+# User-specific folders for Rider
+.idea/

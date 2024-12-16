@@ -1,0 +1,42 @@
+﻿@using Sitecore.Resources.Media
+@using Sitecore.Mvc
+@using Sitecore.Data.Fields
+@using Sitecore.Data.Items
+@model Headermodel.Models.Headermodels
+
+<link rel="stylesheet" href="~/css/Header.css">
+@if (Model != null && Model.Item != null)
+{
+    <div class="header-container">
+        <div class="logo">
+            <div class="logo-field">
+                @Html.Sitecore().Field("Logo", Model.Item)
+            </div>
+        </div>
+        @{
+            MultilistField multiselectField = Model.Item.Fields["Navmenu"];
+            if (multiselectField != null)
+            {
+                Item[] items = multiselectField.GetItems();
+            
+            <div class="features">
+                @foreach (var item in items)
+                {
+                    <div class="header">
+                        <div class="header-title">
+                            @Html.Sitecore().Field("Title", item)
+                        </div>
+                        <div class="header-navlink">
+                            @Html.Sitecore().Field("Navlink", item)
+                        </div>
+                        <div class="header-subnav">
+                            @Html.Sitecore().Field("Subnav", item)
+                        </div>
+                    </div>
+                }
+            </div>
+            }
+           
+        }
+    </div>
+                }
